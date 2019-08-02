@@ -67,6 +67,11 @@ body {
     height: 100%;
     display: block;
 }
+
+#fotoModal{
+    z-index: -1;
+    opacity: 0;
+}
 .header-img {
     height: 20px;
     padding: 4px 0;
