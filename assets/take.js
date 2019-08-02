@@ -64,6 +64,7 @@ function init() { // eslint-disable-line no-unused-vars
             
             document.getElementById("fotoModal").style.opacity = 1;
             document.getElementById("fotoModal").style.zIndex = 1;
+            document.getElementById("fotoModal").style.display = "flex";
 
         }),
         L.marker([57.24993345423012, -148.58867685966123]).on('click' , function(e){
@@ -71,9 +72,10 @@ function init() { // eslint-disable-line no-unused-vars
             
             panorama.updateTexture(texture2);
             
-            document.getElementById("fotoModal").style.display = "flex";
             document.getElementById("fotoModal").style.opacity = 1;
             document.getElementById("fotoModal").style.zIndex = 1;
+            document.getElementById("fotoModal").style.display = "flex";
+            console.log("oi/")
 
 
         }),
