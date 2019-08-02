@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" type="text/css" href="vendor/Photo-Sphere-Viewer-3.5.1/photo-sphere-viewer.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/leaflet/leaflet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.2/build/pannellum.css"/>
+    <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css" />
+
+
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="vendor/rastercoords.js"></script>
+    <script src="vendor/three.min.js"></script>
+    <script src="vendor/panolens.min.js"></script>
+    <script src="assets/take.js"></script>
+    <title>Projeto ANA</title>
+</head>
+
+<body onload="init()">
+
+    <div id="outer">
+        <div id="header">
+            <a href="#" title="Sobre" onclick="openModal('sobre'); return false;">
+                <img src="assets/img/sobre.png" alt="" class="header-img">
+            </a>
+            <img src="assets/img/space.png" alt="" class="header-img">
+            <a href="#" title="Envie" onclick="openModal('envie'); return false;">
+                <img src="assets/img/envie.png" alt="" class="header-img">
+            </a>
+            <img src="assets/img/space.png" alt="" class="header-img">
+            <a href="#" title="Livro" onclick="openModal('livro'); return false;">
+                <img src="assets/img/livro.png" alt="" class="header-img">
+            </a>
+            <img src="assets/img/space.png" alt="" class="header-img">
+            <a href="#" title="transmedia" onclick="openModal('transmedia'); return false;">
+                <img src="assets/img/trans.png" alt="" class="header-img">
+            </a>
+            <img src="assets/img/space.png" alt="" class="header-img">
+            <a href="#" title=" Contato" onclick="openModal('sobre'); return false;">
+                <img src="assets/img/contato.png" alt="" class="header-img">
+            </a>
+        </div>
+        <div id="inner">
+            <div id="map"></div>
+            <div id="sobre" class="modal">
+                <div class="modal-title">
+                    <img src="assets/img/sobre.png" alt="">
+                    <span onclick="closeAll()" class="modal-close">&times;</span>
+                </div>
+                <div class="modal-cont">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, id harum explicabo labore
+                        aspernatur iste, ullam impedit quasi aliquam ad exercitationem eos sint quo, praesentium
+                        repellendus debitis animi! Quo, recusandae!</p>
+                    <p>Voluptatem perspiciatis laboriosam provident eligendi cupiditate, commodi eos. Harum cum nesciunt
+                        quae placeat facere asperiores tempora, minus recusandae qui neque quidem consectetur, eveniet
+                        repellendus, voluptates itaque. Corporis pariatur numquam laboriosam?</p>
+                    <p>Dolorum blanditiis mollitia reiciendis impedit nostrum incidunt. Inventore perferendis eveniet
+                        dolorum voluptates ratione aliquam quos, ad, minus quia corrupti optio facere nesciunt vero
+                        modi, explicabo consectetur quisquam odio labore beatae.</p>
+                    <p>Vero minima asperiores, commodi inventore dolor quia voluptas adipisci tempora est qui in autem
+                        at reprehenderit veritatis aspernatur itaque porro labore placeat. Nostrum harum dolor odio
+                        repudiandae sapiente vero iure.</p>
+                    <p>Autem molestias quibusdam id. Repellendus, sint suscipit. Nulla ullam modi ipsum tempora error
+                        adipisci velit maxime nostrum? Neque, rem molestiae error culpa blanditiis accusamus reiciendis
+                        consequuntur? Animi unde aliquid magni?</p>
+                </div>
+            </div>
+            <div id="envie" class="modal">
+                <div class="modal-title">
+                    <img src="assets/img/sobre.png" alt="">
+                    <span onclick="closeAll()" class="modal-close">&times;</span>
+                </div>
+                <div class="modal-cont">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, id harum explicabo labore
+                        aspernatur iste, ullam impedit quasi aliquam ad exercitationem eos sint quo, praesentium
+                        repellendus debitis animi! Quo, recusandae!</p>
+                    <p>Voluptatem perspiciatis laboriosam provident eligendi cupiditate, commodi eos. Harum cum nesciunt
+                        quae placeat facere asperiores tempora, minus recusandae qui neque quidem consectetur, eveniet
+                        repellendus, voluptates itaque. Corporis pariatur numquam laboriosam?</p>
+                    <p>Dolorum blanditiis mollitia reiciendis impedit nostrum incidunt. Inventore perferendis eveniet
+                        dolorum voluptates ratione aliquam quos, ad, minus quia corrupti optio facere nesciunt vero
+                        modi, explicabo consectetur quisquam odio labore beatae.</p>
+                    <p>Vero minima asperiores, commodi inventore dolor quia voluptas adipisci tempora est qui in autem
+                        at reprehenderit veritatis aspernatur itaque porro labore placeat. Nostrum harum dolor odio
+                        repudiandae sapiente vero iure.</p>
+                    <p>Autem molestias quibusdam id. Repellendus, sint suscipit. Nulla ullam modi ipsum tempora error
+                        adipisci velit maxime nostrum? Neque, rem molestiae error culpa blanditiis accusamus reiciendis
+                        consequuntur? Animi unde aliquid magni?</p>
+                </div>
+            </div>
+            <div id="livro" class="modal">
+                <div class="modal-title">
+                    <img src="assets/img/sobre.png" alt="">
+                    <span onclick="closeAll()" class="modal-close">&times;</span>
+                </div>
+                <div class="modal-cont">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, id harum explicabo labore
+                        aspernatur iste, ullam impedit quasi aliquam ad exercitationem eos sint quo, praesentium
+                        repellendus debitis animi! Quo, recusandae!</p>
+                    <p>Voluptatem perspiciatis laboriosam provident eligendi cupiditate, commodi eos. Harum cum nesciunt
+                        quae placeat facere asperiores tempora, minus recusandae qui neque quidem consectetur, eveniet
+                        repellendus, voluptates itaque. Corporis pariatur numquam laboriosam?</p>
+                    <p>Dolorum blanditiis mollitia reiciendis impedit nostrum incidunt. Inventore perferendis eveniet
+                        dolorum voluptates ratione aliquam quos, ad, minus quia corrupti optio facere nesciunt vero
+                        modi, explicabo consectetur quisquam odio labore beatae.</p>
+                    <p>Vero minima asperiores, commodi inventore dolor quia voluptas adipisci tempora est qui in autem
+                        at reprehenderit veritatis aspernatur itaque porro labore placeat. Nostrum harum dolor odio
+                        repudiandae sapiente vero iure.</p>
+                    <p>Autem molestias quibusdam id. Repellendus, sint suscipit. Nulla ullam modi ipsum tempora error
+                        adipisci velit maxime nostrum? Neque, rem molestiae error culpa blanditiis accusamus reiciendis
+                        consequuntur? Animi unde aliquid magni?</p>
+                </div>
+            </div>
+            <div id="transmedia" class="modal">
+                <div class="modal-title">
+                    <img src="assets/img/sobre.png" alt="">
+                    <span onclick="closeAll()" class="modal-close">&times;</span>
+                </div>
+                <div class="modal-cont">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, id harum explicabo labore
+                        aspernatur iste, ullam impedit quasi aliquam ad exercitationem eos sint quo, praesentium
+                        repellendus debitis animi! Quo, recusandae!</p>
+                    <p>Voluptatem perspiciatis laboriosam provident eligendi cupiditate, commodi eos. Harum cum nesciunt
+                        quae placeat facere asperiores tempora, minus recusandae qui neque quidem consectetur, eveniet
+                        repellendus, voluptates itaque. Corporis pariatur numquam laboriosam?</p>
+                    <p>Dolorum blanditiis mollitia reiciendis impedit nostrum incidunt. Inventore perferendis eveniet
+                        dolorum voluptates ratione aliquam quos, ad, minus quia corrupti optio facere nesciunt vero
+                        modi, explicabo consectetur quisquam odio labore beatae.</p>
+                    <p>Vero minima asperiores, commodi inventore dolor quia voluptas adipisci tempora est qui in autem
+                        at reprehenderit veritatis aspernatur itaque porro labore placeat. Nostrum harum dolor odio
+                        repudiandae sapiente vero iure.</p>
+                    <p>Autem molestias quibusdam id. Repellendus, sint suscipit. Nulla ullam modi ipsum tempora error
+                        adipisci velit maxime nostrum? Neque, rem molestiae error culpa blanditiis accusamus reiciendis
+                        consequuntur? Animi unde aliquid magni?</p>
+                </div>
+            </div>
+            <div id="contato" class="modal">
+                <div class="modal-title">
+                    <img src="assets/img/sobre.png" alt="">
+                    <span onclick="closeAll()" class="modal-close">&times;</span>
+                </div>
+                <div class="modal-cont">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, id harum explicabo labore
+                        aspernatur iste, ullam impedit quasi aliquam ad exercitationem eos sint quo, praesentium
+                        repellendus debitis animi! Quo, recusandae!</p>
+                    <p>Voluptatem perspiciatis laboriosam provident eligendi cupiditate, commodi eos. Harum cum nesciunt
+                        quae placeat facere asperiores tempora, minus recusandae qui neque quidem consectetur, eveniet
+                        repellendus, voluptates itaque. Corporis pariatur numquam laboriosam?</p>
+                    <p>Dolorum blanditiis mollitia reiciendis impedit nostrum incidunt. Inventore perferendis eveniet
+                        dolorum voluptates ratione aliquam quos, ad, minus quia corrupti optio facere nesciunt vero
+                        modi, explicabo consectetur quisquam odio labore beatae.</p>
+                    <p>Vero minima asperiores, commodi inventore dolor quia voluptas adipisci tempora est qui in autem
+                        at reprehenderit veritatis aspernatur itaque porro labore placeat. Nostrum harum dolor odio
+                        repudiandae sapiente vero iure.</p>
+                    <p>Autem molestias quibusdam id. Repellendus, sint suscipit. Nulla ullam modi ipsum tempora error
+                        adipisci velit maxime nostrum? Neque, rem molestiae error culpa blanditiis accusamus reiciendis
+                        consequuntur? Animi unde aliquid magni?</p>
+                </div>
+            </div>
+            <div id="videoModal" class="modal">
+                <div class="modal-title">
+                    <span onclick="closeAll()" class="modal-close">&times;</span>
+                </div>
+                <video id='my-video' class='video-js vjs-16-9' controls preload='auto' poster='MY_VIDEO_POSTER.jpg'
+                    data-setup='{}'>
+                    <p class='vjs-no-js'>
+                        To view this video please enable JavaScript, and consider upgrading to a web browser that
+                        <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+                    </p>
+                </video>
+            </div>
+            <div id="fotoModal" class="modal">
+                    <div class="modal-title">
+                        <span onclick="closeAll()" class="modal-close">&times;</span>
+                    </div>
+                   <div id="viewer"></div>
+                </div>
+        </div>
+    </div>
+
+
+
+
+    <script src='https://vjs.zencdn.net/7.6.0/video.js'></script>
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="vendor/rastercoords.js"></script>
+    <script src="vendor/three.min.js"></script>
+    <script src="vendor/panolens.min.js"></script>
+    <script src="assets/take.js"></script>
+</body>
+
+
+</html>
